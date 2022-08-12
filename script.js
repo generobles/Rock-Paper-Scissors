@@ -1,3 +1,13 @@
+function playerSelect() {
+
+}
+const btns = document.querySelectorAll('button');
+btns.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(button.textContent);
+    })
+})
+
 let playerChoice = window.prompt("Choose your weapon:");
 let computerChoice = ['rock', 'paper', 'scissors'];
 
@@ -40,7 +50,7 @@ function playRound(playerSelection, computerSelection) {
    }
 }
 
-function game() {
+/*function game() {
    for (let i = 0; i < 5; i++) {
     playerPoint = i;
     computerPoint = i;
@@ -52,4 +62,4 @@ function game() {
         return "Computer wins";
     }
    } 
-}
+} */
