@@ -1,4 +1,5 @@
 const btns = document.querySelectorAll('button:not(#reset)');
+const modal = document.querySelector('#modal-box');
 let playerScore = document.getElementById('player-score');
 let cpuScore = document.getElementById('cpu-score');
 let computerChoice = ['rock', 'paper', 'scissors'];
@@ -32,6 +33,7 @@ function playRound(playerSelection, computerSelection) {
                     btns.forEach((active) => {
                         active.disabled = true;
                     })
+                    modal.showModal();
                     rbtn.disabled = false;
                     document.getElementById('game-winner').innerHTML = "You Win!"
                 }
@@ -46,6 +48,7 @@ function playRound(playerSelection, computerSelection) {
                     btns.forEach((active) => {
                         active.disabled = true;
                     })
+                    modal.showModal();
                     rbtn.disabled = false;
                     document.getElementById('game-winner').innerHTML = "CPU wins!"
                 }
@@ -68,4 +71,5 @@ function resetGame() {
 rbtn.disabled = true;
 rbtn.addEventListener('click', () => {
     resetGame();
+    modal.close();
 })
