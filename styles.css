@@ -1,0 +1,22 @@
+html {
+    width: 100%;
+
+}
+
+* {
+    border: 1px solid black;
+}
+
+body {
+    box-sizing: border-box;
+}   
+
+h1, p {
+    text-align: center;
+}
+
+section {
+    width: 20%;
+    height: 20%;
+    margin: auto;    
+}
