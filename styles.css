@@ -17,8 +17,8 @@ body {
 
 h1, p {
     text-align: center;
-    color: hsl(210, 3%, 87%)
 }
+
 .buttons {
     display: flex;
     justify-content: space-evenly;
@@ -26,6 +26,7 @@ h1, p {
     margin-right: auto;
     width: 60%;
     height: 5%;
+    margin-top: 10vh;
 }
 
 .buttons button{
@@ -34,10 +35,57 @@ h1, p {
     border-radius: 5px;
 }
 
-#result, #player-score, #cpu-score, #game-winner {
-    height: 20px;
-    width: 50%;
+.text-box {
+    text-align: center;
 }
+
+#round-result {
+   margin: 20px auto;
+   height: 2rem;
+   width: 50%;
+   font-size: 2rem;
+}
+
+#player-score, #cpu-score {
+    width: 15%;
+    height: 15%;
+    font-size: 4.2rem;
+    
+}
+#player-score {
+    float: left;
+    margin-left: 5%;
+}
+
+#cpu-score {
+    float: right;
+    margin-right: 5%;
+}
+
+#player-score::before {
+    content: " Your score:";
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+#cpu-score::before {
+    content: " CPU score:";
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+#game-winner {
+    font-size: 1.5rem;
+}
+
+#reset {
+    width: 40%;
+    font-size: 1.2rem;
+    border-radius: 5px;     
+}
+
 .modal {
     border-radius: 5px;
     width: 40%;
@@ -51,14 +99,4 @@ h1, p {
     flex-direction: column;
     align-items: center;
     row-gap: 10px;
-    
 }
-
-#reset {
-    width: 40%;
-    font-size: 1.2rem;     
-}
-#game-winner {
-    text-align: center;
-}
-
