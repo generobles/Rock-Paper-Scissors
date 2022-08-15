@@ -10,7 +10,7 @@ const rbtn = document.getElementById('reset');
 btns.forEach((button) => {
     button.addEventListener('click', () => {
         let x = button.textContent.toLowerCase();
-        document.getElementById('result').innerHTML = playRound(x,getComputerChoice());
+        document.getElementById('round-result').innerHTML = playRound(x,getComputerChoice());
         playerScore.innerHTML = playerPoint;
         cpuScore.innerHTML = computerPoint;
         
@@ -65,6 +65,7 @@ function resetGame() {
         active.disabled = false;
     })
     document.getElementById('game-winner').innerHTML = "";
+    document.getElementById('round-result').innerHTML = "";
     rbtn.disabled = true;
 }
 
