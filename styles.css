@@ -1,7 +1,7 @@
-* {
-    border: 1px solid black;
-    
-}
+/** {
+    border: 1px solid black;   
+}*/
+
 
 body {
     box-sizing: border-box;
@@ -10,13 +10,23 @@ body {
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
+    background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
     
-    /**background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-    **/
 }   
 
 h1, p {
     text-align: center;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    color: hsl(217, 19%, 87%);
+}
+
+h1 {
+    padding-top: 20px;
+    font-size: 3.5rem;
+}
+
+p {
+    font-size: 1.5rem;
 }
 
 .buttons {
@@ -26,7 +36,20 @@ h1, p {
     margin-right: auto;
     width: 60%;
     height: 5%;
-    margin-top: 10vh;
+    position: relative;
+    top: 20%;
+}
+
+h2 {
+    width: max-content;
+    height: max-content;
+    margin-left: auto;
+    margin-right: auto; 
+    position: relative;
+    top: 21%;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 2rem;
+    color: hsl(217, 19%, 87%);
 }
 
 .buttons button{
@@ -37,6 +60,8 @@ h1, p {
 
 .text-box {
     text-align: center;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    color: hsl(217, 19%, 87%);
 }
 
 #round-result {
@@ -44,6 +69,8 @@ h1, p {
    height: 2rem;
    width: 50%;
    font-size: 2rem;
+   position: relative;
+   top: 10%;
 }
 
 #player-score, #cpu-score {
@@ -100,3 +127,4 @@ h1, p {
     align-items: center;
     row-gap: 10px;
 }
+
