@@ -66,6 +66,8 @@ function resetGame() {
     })
     document.getElementById('game-winner').innerHTML = "";
     document.getElementById('round-result').innerHTML = "";
+    document.getElementById('player-score').innerHTML = "";
+    document.getElementById('cpu-score').innerHTML = "";
     rbtn.disabled = true;
 }
 
