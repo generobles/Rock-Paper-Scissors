@@ -9,8 +9,8 @@ const rbtn = document.getElementById('reset');
 
 btns.forEach((button) => {
     button.addEventListener('click', () => {
-        let x = button.textContent.toLowerCase();
-        document.getElementById('round-result').innerHTML = playRound(x,getComputerChoice());
+        let playerChoice = button.getAttribute('id').toLowerCase();
+        document.getElementById('round-result').innerHTML = playRound(playerChoice,getComputerChoice());
         playerScore.innerHTML = playerPoint;
         cpuScore.innerHTML = computerPoint;
         
