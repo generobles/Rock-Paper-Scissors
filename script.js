@@ -12,13 +12,16 @@ btns.forEach((button) => {
         let playerChoice = button.getAttribute('id').toLowerCase();
         document.getElementById('round-result').innerHTML = playRound(playerChoice,getComputerChoice());
         playerScore.innerHTML = playerPoint;
-        cpuScore.innerHTML = computerPoint;
-        
+        cpuScore.innerHTML = computerPoint;    
     })
 })
 
 function getComputerChoice() {
     return computerChoice[Math.floor(Math.random()*3)];
+}
+
+function capFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -35,9 +38,9 @@ function playRound(playerSelection, computerSelection) {
                     })
                     modal.showModal();
                     rbtn.disabled = false;
-                    document.getElementById('game-winner').innerHTML = "You Win!"
+                    document.getElementById('game-winner').innerHTML = "Victory"
                 }
-                return "You win! " + playerSelection + " beats " + computerSelection;
+                return "You win! " + capFirstLetter(playerSelection) + " beats " + capFirstLetter(computerSelection);
             
             }
    else if (playerSelection=='scissors' && computerSelection=='rock' ||
@@ -50,9 +53,9 @@ function playRound(playerSelection, computerSelection) {
                     })
                     modal.showModal();
                     rbtn.disabled = false;
-                    document.getElementById('game-winner').innerHTML = "CPU wins!"
+                    document.getElementById('game-winner').innerHTML = "Defeat"
                 }
-                return "You lose! " + computerSelection + " beats " + playerSelection;
+                return "You lose! " + capFirstLetter(computerSelection) + " beats " + capFirstLetter(playerSelection);
             }   
 }
 
@@ -76,3 +79,4 @@ rbtn.addEventListener('click', () => {
     resetGame();
     modal.close();
 })
+
