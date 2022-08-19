@@ -99,7 +99,8 @@ function resetGame() {
     })
     document.getElementById('game-winner').innerHTML = "";
     document.getElementById('round-result').innerHTML = "";
-
+    document.getElementById('player-score').innerHTML = "";
+    document.getElementById('cpu-score').innerHTML = "";
     document.getElementById('player-choice').innerHTML = "";
     document.getElementById('cpu-choice').innerHTML = "";
     rbtn.disabled = true;
