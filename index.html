@@ -14,10 +14,17 @@
     <script src="script.js" defer></script>  
     <h1>ROCK PAPER SCISSORS</h1>
     <p>Score 5 points to win the game</p>
-    <div id="round-result" class="text-box"></div>
     <div class="score">SCORE</div>
-    <div id="player-score" class="text-box"></div>
-    <div id="cpu-score" class="text-box"></div>
+    <div class="score-box">
+        <span id="player-score"></span> - <span id="cpu-score"></span>
+    </div>
+    <div id="player">You
+        <div class="output" id="player-choice"></div>
+    </div>
+    <div id="cpu">CPU
+        <div class="output" id="cpu-choice"></div>
+    </div>
+    <div id="round-result" class="text-box"></div>
     <h2>Choose your weapon:</h2>
     <div class="buttons">
         <button id="rock">
@@ -29,12 +36,6 @@
         <button id="scissors">
             <img src="images/icon-scissors.svg" alt="Scissors" height="55%" width="55%" />
         </button>
-    </div> 
-    <div id="player">You
-        <div class="output" id="player-choice"></div>
-    </div>
-    <div id="cpu">CPU
-        <div class="output" id="cpu-choice"></div>
     </div>
     <dialog  id="modal-box" class="modal">
         <div class="modal-content">
