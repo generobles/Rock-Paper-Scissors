@@ -2,9 +2,9 @@ body {
     box-sizing: border-box;
     width: 100vw;
     height: 100vh;
+    min-width: 300px;
     overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 }   
 
@@ -26,7 +26,7 @@ p {
 h2 {
     text-align: center;
     position: relative;
-    top: 26%;
+    top: 17%;
     font-family: "Barlow Semi Condensed", sans-serif;
     font-size: 2rem;
     color: hsl(54, 78%, 49%);
@@ -42,10 +42,8 @@ h2 {
     width: max-content;
     height: max-content;
     position: relative;
-    top: 27%;
+    top: 18%;
 }
-
-
 
 .buttons button {
     width: 100px;
@@ -81,27 +79,24 @@ h2 {
    width: 50%;
    font-size: 2rem;
    position: relative;
-   top: 10%;
+   top: 15%;
 }
 
-#player {
+#player, #cpu {
     font-family: "Barlow Semi Condensed", sans-serif;
     color: hsl(217, 19%, 87%);
     font-size: 2rem;
     position: absolute;
-    top: 42%;
-    left: 20%;
     text-align: center;
+}
+#player {
+    top: 30vh;
+    left: 20%;   
 }
 
 #cpu {
-    font-family: "Barlow Semi Condensed", sans-serif;
-    color: hsl(217, 19%, 87%);
-    font-size: 2rem; 
-    position: absolute;
-    top: 42%;
+    top: 30vh;
     right: 20%;
-    text-align: center;
 }
 
 .output {
@@ -116,45 +111,24 @@ h2 {
     justify-content: center;
 }
 
-/*#player::after, #cpu::after {
-    content: "Score: "
-}*/
-
-.score {
+.score, .score-box {
     width: max-content;
     height: max-content;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 2rem;
+    margin: 0 auto;
+    position: relative;
     font-family: "Barlow Semi Condensed", sans-serif;
     color: hsl(217, 19%, 87%);
-    text-align: center;
-    position: relative;
-    top: 17%;
 }
 
-.score::after {
-    content: "-";
+.score {
+    font-size: 2rem;
+    top: 6vh;
+}
+
+.score-box {
     font-size: 4.2rem;
-    display: block;
-}
-
-#player-score, #cpu-score {
-    width: 15%;
-    height: 15%;
-    font-size: 4.2rem;
-    
-}
-#player-score {
-    position: absolute;
-    top: 51%;
-    left: 35%;
-}
-
-#cpu-score {
-    position: absolute;
-    top: 51%;
-    right: 35%;
+    top: 7vh;
+    word-spacing: 25px;
 }
 
 #game-winner {
@@ -195,7 +169,7 @@ h2 {
     100% {opacity: 1;}
 }
 
-@media (max-width:1366px) {
+@media only screen and (max-width:1366px) {
     .modal {
         width: 25%;
     }
@@ -206,18 +180,7 @@ h2 {
     }
 }
 
-@media (max-width:768px) {
-    .modal {
-        width: 40%;
-    }
-    
-    #reset {
-        width: 35%;
-    }
-}
-
-
-@media screen and (max-width:480px) {
+@media only screen and (max-width:480px) {
     h1 {
         font-size: 2.3rem;
     }
@@ -228,16 +191,12 @@ h2 {
 
     h2 {
         font-size: 1.8rem;
-    }
-
-    .score {
-        font-size: 1.7rem;
-        position: relative;
-        top: 24%
+        top: 26%;
     }
 
     .buttons {
         column-gap: 20px;
+        top: 27%;
     }
 
     .buttons button {
@@ -245,33 +204,35 @@ h2 {
         height: 85px;
     }
 
-    .score::after {
-        content: "-";
-        font-size: 2rem;
-        display: block;
+    .score {
+        font-size: 1.7rem;
+        top: 7%;
     }
     
-    #player-score, #cpu-score {
-        width: 15%;
-        height: 15%;
-        font-size: 2rem; 
+    .score-box {
+        font-size: 2.1rem;
+        top: 10%;
+        word-spacing: 10px;
     }
+    
 
     #round-result {
         width: max-content;
         font-size: 1.8rem;
-        position: relative;
-        top: 10%;
+        top: 20%; 
+    }
+
+    #player, #cpu {
+        font-size: 1.6rem;
+        top: 25%
     }
 
     #player {
         left: 10%;
-        font-size: 1.6rem;
     }
 
     #cpu {
         right: 10%;
-        font-size: 1.6rem;
     }
 
     .output {
