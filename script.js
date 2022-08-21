@@ -63,10 +63,8 @@ function playRound(playerSelection, computerSelection) {
             playerSelection=='paper' && computerSelection=='rock') {
                 playerPoint++;
                 if (playerPoint == 5) {
-                    btns.forEach((active) => {
-                        active.disabled = true;
-                    })
                     modal.showModal();
+                    document.getElementsByTagName("html")[0].style.opacity = "0.5";
                     rbtn.disabled = false;
                     document.getElementById('game-winner').innerHTML = "Victory"
                 }
@@ -78,10 +76,8 @@ function playRound(playerSelection, computerSelection) {
             playerSelection=='rock' && computerSelection=='paper') {
                 computerPoint++;
                 if (computerPoint == 5) {
-                    btns.forEach((active) => {
-                        active.disabled = true;
-                    })
                     modal.showModal();
+                    document.getElementsByTagName("html")[0].style.opacity = "0.5";
                     rbtn.disabled = false;
                     document.getElementById('game-winner').innerHTML = "Defeat"
                 }
@@ -94,9 +90,6 @@ function resetGame() {
     computerPoint = 0;
     playerScore.innerHTML = 0;
     cpuScore.innerHTML = 0;
-    btns.forEach((active) => {
-        active.disabled = false;
-    })
     document.getElementById('game-winner').innerHTML = "";
     document.getElementById('round-result').innerHTML = "";
     document.getElementById('player-score').innerHTML = "";
@@ -110,5 +103,6 @@ rbtn.disabled = true;
 rbtn.addEventListener('click', () => {
     resetGame();
     modal.close();
+    document.getElementsByTagName("html")[0].style.opacity = "1";
 })
 
