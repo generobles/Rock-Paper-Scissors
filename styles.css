@@ -6,11 +6,11 @@ body {
     overflow: hidden;
     margin: 0 auto;
     background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    font-family: "Barlow Semi Condensed", sans-serif;
 }   
 
 h1, p {
     text-align: center;
-    font-family: "Barlow Semi Condensed", sans-serif;
     color: hsl(217, 19%, 87%);
 }
 
@@ -27,7 +27,6 @@ h2 {
     text-align: center;
     position: relative;
     top: 17%;
-    font-family: "Barlow Semi Condensed", sans-serif;
     font-size: 2rem;
     color: hsl(54, 78%, 49%);
 }
@@ -65,7 +64,6 @@ h2 {
 
 .text-box {
     text-align: center;
-    font-family: "Barlow Semi Condensed", sans-serif;
     color: hsl(217, 19%, 87%);
 }
 
@@ -83,25 +81,14 @@ h2 {
 }
 
 #player, #cpu {
-    font-family: "Barlow Semi Condensed", sans-serif;
     color: hsl(217, 19%, 87%);
     font-size: 2rem;
-    position: absolute;
     text-align: center;
-}
-#player {
-    top: 30vh;
-    left: 20%;   
-}
-
-#cpu {
-    top: 30vh;
-    right: 20%;
 }
 
 .output {
     border: 9px solid black;
-    border-radius: 50%;
+    border-radius: 10px;
     width: 100px;
     height: 100px;
     background-color: white;
@@ -111,24 +98,30 @@ h2 {
     justify-content: center;
 }
 
-.score, .score-box {
-    width: max-content;
-    height: max-content;
+
+#game-section {
+    display: flex;
+    justify-content: center;
+    width: 50vw;
     margin: 0 auto;
     position: relative;
-    font-family: "Barlow Semi Condensed", sans-serif;
+    top: 10%;
+}
+
+#score, .score-box {
+    margin: 0 auto;
     color: hsl(217, 19%, 87%);
 }
 
-.score {
+#score {
     font-size: 2rem;
-    top: 6vh;
+    text-align: center;
 }
 
 .score-box {
     font-size: 4.2rem;
-    top: 7vh;
-    word-spacing: 25px;
+    word-spacing: 15px;
+    margin-top: 20px;
 }
 
 #game-winner {
@@ -137,31 +130,33 @@ h2 {
 }
 
 #reset {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     border-radius: 5px;  
     color:hsl(214, 47%, 23%);
-    background-color: whitesmoke;   
+    background-color: whitesmoke;  
+    margin: auto;
+    font-family: "Barlow Semi Condensed", sans-serif;
 }
 
 #reset:hover {
     color: rgb(255, 38, 0);
 }
 
-.modal {
-    border-radius: 5px;
-    width: 25%;
-    height: 12%;
+#modal-box {
+    border-radius: 10px;
+    border:9px solid hsl(229, 25%, 31%);
+    width: 25%; 
     overflow: hidden;
     background-color: hsl(217, 19%, 87%);
 }
 
 .modal-content {
     width: 100%;
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    row-gap: 27px;
+    justify-content: center;
+    row-gap: 25px;
+    margin:auto;
 }
 
 @keyframes fade-in {
@@ -169,18 +164,106 @@ h2 {
     100% {opacity: 1;}
 }
 
-@media only screen and (max-width:1366px) {
-    .modal {
-        width: 25%;
+@media (max-width:1366px) {
+    h1 {
+        font-size: 3.3rem;
+    }
+    
+    p, h2, #score, #round-result {
+        font-size: 1.8rem;
+    }
+
+    .buttons {
+        column-gap: 40px;
+    }
+
+    .buttons button {
+        width: 95px;
+        height: 95px;
+    }
+    
+    .score-box {
+        font-size: 2.4rem;
+        word-spacing: 2px;
+    }
+    
+    #game-section {
+        column-gap: 80px;
+    }
+
+    #round-result {
+        width: max-content;    
+    }
+
+    #player, #cpu {
+        font-size: 1.6rem;
+    }
+
+    .output {
+        width: 90px;
+        height: 90px;
     }
     
     #reset {
-        width: 50%;
+        width: 60%;
         font-size: 1.5rem;
     }
 }
 
-@media only screen and (max-width:480px) {
+@media (max-width:768px) {
+    h1 {
+        font-size: 3.3rem;
+    }
+    
+    p{
+        font-size: 1.7rem;
+    }
+
+    h2, #score, #round-result {
+        font-size: 1.8rem;
+    }
+
+    .buttons {
+        column-gap: 40px;
+    }
+
+    .buttons button {
+        width: 85px;
+        height: 85px;
+    }
+
+    .score-box {
+        font-size: 2.5rem;
+        word-spacing: 2px;
+    }
+    
+    #game-section {
+        column-gap: 90px;
+    }
+
+    #round-result {
+        width: max-content;   
+    }
+
+    #player, #cpu {
+        font-size: 1.6rem;
+    }
+
+    .output {
+        width: 80px;
+        height: 80px;
+    }
+
+    #modal-box {
+        width: 50vw;     
+    }
+
+    #reset {
+        width: 50%;
+    }
+}
+
+@media (max-width:480px) {
     h1 {
         font-size: 2.3rem;
     }
@@ -189,59 +272,43 @@ h2 {
         font-size: 1.4rem;
     }
 
-    h2 {
+    h2, #score, #round-result {
         font-size: 1.8rem;
-        top: 26%;
     }
 
     .buttons {
         column-gap: 20px;
-        top: 27%;
     }
 
     .buttons button {
         width: 85px;
         height: 85px;
     }
-
-    .score {
-        font-size: 1.7rem;
-        top: 7%;
-    }
     
     .score-box {
-        font-size: 2.1rem;
-        top: 10%;
-        word-spacing: 10px;
+        font-size: 2.2rem;
+        word-spacing: 5px;
     }
     
+    #game-section {
+        column-gap: 40px;
+    }
 
     #round-result {
-        width: max-content;
-        font-size: 1.8rem;
-        top: 20%; 
+        width: max-content;     
     }
 
     #player, #cpu {
         font-size: 1.6rem;
-        top: 25%
-    }
-
-    #player {
-        left: 10%;
-    }
-
-    #cpu {
-        right: 10%;
     }
 
     .output {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
 
-    .modal {
-        width: 50%;
+    #modal-box {
+        width: 50vw;     
     }
 
     #reset {
