@@ -13,15 +13,15 @@ btns.forEach((button) => {
         document.getElementById('round-result').innerHTML = playRound(playerChoice,getComputerChoice());
         if (playerChoice == 'rock') {
             document.getElementById('player-choice').innerHTML = 
-            "<img src=\"images/icon-rock.svg\" alt=\"Rock\" height=\"55%\" width=\"55%\" />"
+            "<img src=\"images/icon-rock.svg\" alt=\"Rock\" height=\"55%\" width=\"55%\" />";
         }
         else if (playerChoice == 'paper') {
             document.getElementById('player-choice').innerHTML = 
-            "<img src=\"images/icon-paper.svg\" alt=\"Paper\" height=\"55%\" width=\"55%\" />"
+            "<img src=\"images/icon-paper.svg\" alt=\"Paper\" height=\"55%\" width=\"55%\" />";
         }
         else if (playerChoice == 'scissors') {
             document.getElementById('player-choice').innerHTML =
-            "<img src=\"images/icon-scissors.svg\" alt=\"Scissors\" height=\"55%\" width=\"55%\" />"
+            "<img src=\"images/icon-scissors.svg\" alt=\"Scissors\" height=\"55%\" width=\"55%\" />";
         } 
         playerScore.innerHTML = playerPoint;
         cpuScore.innerHTML = computerPoint; 
@@ -37,15 +37,15 @@ function getComputerChoice() {
     let x = computerChoice[Math.floor(Math.random()*3)];
     if (x == 'rock') {
         document.getElementById('cpu-choice').innerHTML = 
-        "<img src=\"images/icon-rock.svg\" alt=\"Rock\" height=\"55%\" width=\"55%\" />"
+        "<img src=\"images/icon-rock.svg\" alt=\"Rock\" height=\"55%\" width=\"55%\" />";
     }
     else if (x == 'paper') {
         document.getElementById('cpu-choice').innerHTML = 
-        "<img src=\"images/icon-paper.svg\" alt=\"Paper\" height=\"55%\" width=\"55%\" />"
+        "<img src=\"images/icon-paper.svg\" alt=\"Paper\" height=\"55%\" width=\"55%\" />";
     }
     else if (x == 'scissors') {
         document.getElementById('cpu-choice').innerHTML =
-        "<img src=\"images/icon-scissors.svg\" alt=\"Scissors\" height=\"55%\" width=\"55%\" />"
+        "<img src=\"images/icon-scissors.svg\" alt=\"Scissors\" height=\"55%\" width=\"55%\" />";
     }    
     return x;
 }
@@ -66,7 +66,7 @@ function playRound(playerSelection, computerSelection) {
                     modal.showModal();
                     document.getElementsByTagName("html")[0].style.opacity = "0.5";
                     rbtn.disabled = false;
-                    document.getElementById('game-winner').innerHTML = "Victory"
+                    document.getElementById('game-winner').innerHTML = "Victory";
                 }
                 return "You win! " + capFirstLetter(playerSelection) + " beats " + capFirstLetter(computerSelection);
             
@@ -79,7 +79,7 @@ function playRound(playerSelection, computerSelection) {
                     modal.showModal();
                     document.getElementsByTagName("html")[0].style.opacity = "0.5";
                     rbtn.disabled = false;
-                    document.getElementById('game-winner').innerHTML = "Defeat"
+                    document.getElementById('game-winner').innerHTML = "Defeat";
                 }
                 return "You lose! " + capFirstLetter(computerSelection) + " beats " + capFirstLetter(playerSelection);
             }   
