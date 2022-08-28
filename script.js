@@ -3,6 +3,9 @@ const modal = document.querySelector('#modal-box');
 let playerScore = document.getElementById('player-score');
 let cpuScore = document.getElementById('cpu-score');
 let computerChoice = ['rock', 'paper', 'scissors'];
+const rockIcon = "<img src=\"images/icon-rock.svg\" alt=\"Rock\" height=\"55%\" width=\"55%\" />";
+const paperIcon = "<img src=\"images/icon-paper.svg\" alt=\"Paper\" height=\"55%\" width=\"55%\" />";
+const scissorsIcon = "<img src=\"images/icon-scissors.svg\" alt=\"Scissors\" height=\"55%\" width=\"55%\" />";
 let playerPoint = 0;
 let computerPoint = 0;
 const rbtn = document.getElementById('reset');
@@ -12,16 +15,13 @@ btns.forEach((button) => {
         let playerChoice = button.getAttribute('id');
         document.getElementById('round-result').innerHTML = playRound(playerChoice,getComputerChoice());
         if (playerChoice == 'rock') {
-            document.getElementById('player-choice').innerHTML = 
-            "<img src=\"images/icon-rock.svg\" alt=\"Rock\" height=\"55%\" width=\"55%\" />";
+            document.getElementById('player-choice').innerHTML = rockIcon;
         }
         else if (playerChoice == 'paper') {
-            document.getElementById('player-choice').innerHTML = 
-            "<img src=\"images/icon-paper.svg\" alt=\"Paper\" height=\"55%\" width=\"55%\" />";
+            document.getElementById('player-choice').innerHTML = paperIcon;
         }
         else if (playerChoice == 'scissors') {
-            document.getElementById('player-choice').innerHTML =
-            "<img src=\"images/icon-scissors.svg\" alt=\"Scissors\" height=\"55%\" width=\"55%\" />";
+            document.getElementById('player-choice').innerHTML = scissorsIcon;
         } 
         playerScore.innerHTML = playerPoint;
         cpuScore.innerHTML = computerPoint; 
@@ -36,16 +36,13 @@ btns.forEach((button) => {
 function getComputerChoice() {
     let x = computerChoice[Math.floor(Math.random()*3)];
     if (x == 'rock') {
-        document.getElementById('cpu-choice').innerHTML = 
-        "<img src=\"images/icon-rock.svg\" alt=\"Rock\" height=\"55%\" width=\"55%\" />";
+        document.getElementById('cpu-choice').innerHTML = rockIcon;
     }
     else if (x == 'paper') {
-        document.getElementById('cpu-choice').innerHTML = 
-        "<img src=\"images/icon-paper.svg\" alt=\"Paper\" height=\"55%\" width=\"55%\" />";
+        document.getElementById('cpu-choice').innerHTML = paperIcon;
     }
     else if (x == 'scissors') {
-        document.getElementById('cpu-choice').innerHTML =
-        "<img src=\"images/icon-scissors.svg\" alt=\"Scissors\" height=\"55%\" width=\"55%\" />";
+        document.getElementById('cpu-choice').innerHTML = scissorsIcon;
     }    
     return x;
 }
@@ -63,9 +60,7 @@ function playRound(playerSelection, computerSelection) {
             playerSelection=='paper' && computerSelection=='rock') {
                 playerPoint++;
                 if (playerPoint == 5) {
-                    modal.showModal();
-                    document.getElementsByTagName("html")[0].style.opacity = "0.5";
-                    rbtn.disabled = false;
+                    openModal();
                     document.getElementById('game-winner').innerHTML = "Victory";
                 }
                 return "You win! " + capFirstLetter(playerSelection) + " beats " + capFirstLetter(computerSelection);
@@ -76,9 +71,7 @@ function playRound(playerSelection, computerSelection) {
             playerSelection=='rock' && computerSelection=='paper') {
                 computerPoint++;
                 if (computerPoint == 5) {
-                    modal.showModal();
-                    document.getElementsByTagName("html")[0].style.opacity = "0.5";
-                    rbtn.disabled = false;
+                    openModal();
                     document.getElementById('game-winner').innerHTML = "Defeat";
                 }
                 return "You lose! " + capFirstLetter(computerSelection) + " beats " + capFirstLetter(playerSelection);
@@ -105,4 +98,10 @@ rbtn.addEventListener('click', () => {
     modal.close();
     document.getElementsByTagName("html")[0].style.opacity = "1";
 })
+
+function openModal() {
+    modal.showModal();
+    document.getElementsByTagName("html")[0].style.opacity = "0.5";
+    rbtn.disabled = false;
+}
 
